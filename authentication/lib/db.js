@@ -1,0 +1,16 @@
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+module.exports.mongoose = mongoose;
+module.exports.Schema = Schema;
+
+var username = "testuser";
+var password = "123";
+var address = '@ds035368.mongolab.com:35368/ickydb';
+connect();
+// Connect to mongo
+function connect() {
+    var url = 'mongodb://' + username + ':' + password + address;
+    mongoose.connect(url);
+    console.log ("I am connected");
+}
+function disconnect() {mongoose.disconnect()}
